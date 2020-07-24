@@ -1,0 +1,7 @@
+# kernel side requirements
+qgrid
+ipywidgets
+pandas
+
+# jupyter notebook/lab will of course require
+# jupyter
