@@ -2,8 +2,9 @@
 from IPython.core.display import display, HTML
 
 
-from gridwidgets import CsvGridWidget
+from .gridwidgets import CsvGridWidget
 
+__version__ = "0.1.0"
 
 
 def wide_notebook_display():
