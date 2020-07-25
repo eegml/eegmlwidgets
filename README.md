@@ -4,8 +4,8 @@
   - this requires that ipywidgets and qgrid are properly installed both in the environment serving the jupyter notebook (or jupyter lab) and in the kernel being used
   
 ### Installation
-- as with many jupyter widgets, installatio can be tricky
-- it is easier to get this working with the older jupyter notebooke because of its reduced security
+- as with many jupyter widgets, installation can be tricky
+- it is easier to get this working with the older jupyter notebook because of its reduced security
 - it can work with jupyter lab notebooks
 
 see INSTALL.md for basic instructions on installation
