@@ -4,10 +4,10 @@ pip install git+https://github.com/eegml/eegmlwidgets
 
 probably will work (not yet tested)
 
-### installing qgrid is can be more complicated as it must be installed both in the server process for the jupyter notebook and in the kernel process which is running in the notebook.
-https://www.pugetsystems.com/labs/hpc/Note-JupyterHub-with-JupyterLab-Install-using-Conda-1729/
+### Installing qgrid is can be a bit complicated as it must be installed both in the server process for the jupyter notebook and in the kernel process which is running in the notebook.
 
-Here is how to set up a new environment "newenv" with this working
+
+Here is how to set up a new conda environment "newenv" with this working as both the server and kernel.
 ```
 $ conda create --name newenv   pandas jupyter jupyterlab ipywidgets ipykernel # add any other packages
 $ conda activate newenv
@@ -37,6 +37,8 @@ $ conda activate newenv
 (newenv)$ pip install nbserverproxy
 (newenv)$ jupyter serverextension enable --py nbserverproxy
 ```
+- Note this also requires a proxy function to be used in kernel code. Need to find a reference for this
+
 ### This is what is installed on my system:
 ```
 $ jupyter labextension list
