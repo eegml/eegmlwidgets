@@ -15,19 +15,44 @@ class CsvGridWidget:
     TODO: need to test round trip process especially around types like dates/times
     """
 
-    def __init__(self, file_name, qgrid_precision=2, **kwargs_read_csv):
-        
-        self.file_name = file_name
-        default_options = {"keep_default_na": False}
-        default_options.update(kwargs_read_csv)
-        self._read_csv_options = (
-            default_options  # save this for later to use when writing (TODO!!!)
-        )
+    def __init__(
+        self,
+        file_name,
+        qgrid_precision=2,
+        qgrid_options={},
+        qgrid_column_options={},
+        **kwargs_read_csv,
+    ):
 
-        self.df = pd.read_csv(file_name, **default_options)
+        default_column_options = {
+            # SlickGrid column options
+            "defaultSortAsc": True,
+            "maxWidth": None,
+            "minWidth": 30,
+            "resizable": True,
+            "sortable": True,
+            "toolTip": "",
+            "width": None,
+            # Qgrid column options
+            "editable": True,
+        }
+
+        self.file_name = file_name
+        default_csv_options = {"keep_default_na": False}
+        default_csv_options.update(kwargs_read_csv)
+        # save this for later to use when writing (TODO!!!)
+        self._read_csv_options = default_csv_options
+
+        default_column_options.update(qgrid_column_options)
+        self.df = pd.read_csv(file_name, **default_csv_options)
         # gui
 
-        self.qgrid_widget = qgrid.show_grid(self.df, show_toolbar=True, precision=qgrid_precision)
+        self.qgrid_widget = qgrid.show_grid(
+            self.df,
+            show_toolbar=True,
+            precision=qgrid_precision,
+            column_options=default_column_options,
+        )
         # save button
         self.savebutton = ipywidgets.Button(
             description="Save",
@@ -40,9 +65,9 @@ class CsvGridWidget:
                 f"Saved {self.file_name} {str(datetime.datetime.now())}"
             )  # type(b), repr(b))
             self.save()
-            
+
         self.savebutton.on_click(on_save_button_clicked)
-        
+
         # container/layout
         self.topwidget = ipywidgets.VBox([self.qgrid_widget, self.savebutton])
 
