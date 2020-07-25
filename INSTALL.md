@@ -39,15 +39,16 @@ $ conda activate newenv
 ```
 - Note this also requires a proxy function to be used in kernel code. Need to find a reference for this
 
-### This is what is installed on my system:
+### This is what is installed on my system which is working with jupyterhub notebook and "lab notebook":
 ```
 $ jupyter labextension list
-JupyterLab v1.2.6
+JupyterLab v2.1.5
 Known labextensions:
    app dir: /opt/conda/envs/jupyterhub/share/jupyter/lab
-     @bokeh/jupyter_bokeh v1.2.0  enabled  OK
-     @jupyter-widgets/jupyterlab-manager v1.1.0  enabled  OK
-     jupyter-matplotlib v0.7.2  enabled  OK
-     jupyterlab-jupytext v1.1.1  enabled  OK
-     qgrid2 v1.1.3  enabled  OK
+       @bokeh/jupyter_bokeh v2.0.3  enabled  OK
+	   @jupyter-widgets/jupyterlab-manager v2.0.0  enabled  OK
+	   jupyter-matplotlib v0.7.2  enabled  OK
+	   jupyterlab-jupytext v1.2.1  enabled  OK
+	   qgrid2 v1.1.3  enabled  OK
+										   
 ```										   
