@@ -15,7 +15,8 @@
 
 # %% [markdown]
 # ### CsvGridWidget
-# CsvGridWidget is meant to be a quick way to visualize and edit a csv file using pandas, ipywidgets and qgrid
+# CsvGridWidget is meant to be a quick way to visualize and edit a csv file using pandas, ipywidgets and qgrid.
+# It should only be used if you have a backup of the csv file because it will over-write the changes with the save button
 
 # %%
 # %load_ext autoreload
@@ -54,3 +55,5 @@ ipywidgets.__version__
 # thanks to this article for the source of the example csv:
 # source url https://support.spatialkey.com/spatialkey-sample-csv-data/ 
 # # # !wget http://samplecsvs.s3.amazonaws.com/SalesJan2009.csv 
+
+# %%

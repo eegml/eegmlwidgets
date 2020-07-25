@@ -40,6 +40,8 @@ $ conda activate newenv
 - Note this also requires a proxy function to be used in kernel code. Need to find a reference for this
 
 ### This is what is installed on my system which is working with jupyterhub notebook and "lab notebook":
+As you can see, as of 2020-07-24, this was relatively up-to-date components.
+
 ```
 $ jupyter labextension list
 JupyterLab v2.1.5
